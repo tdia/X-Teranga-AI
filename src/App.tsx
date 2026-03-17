@@ -66,22 +66,22 @@ export default function App() {
   const [currentSlide, setCurrentSlide] = useState(0);
   const slides = [
     {
-      question: "Quel est le chiffre d'affaires du département Ouest sur le dernier trimestre ?",
-      answer: "D'après vos bases de données internes (ERP & CRM) :",
-      data: { label: "CA Trimestriel - Ouest", value: "452,300 €", trend: "+12%" },
-      suggestion: "Voulez-vous que je compare ces chiffres avec les prévisions du budget annuel ?"
+      question: "Analyse des performances du département Ouest sur le dernier trimestre.",
+      answer: "Synthèse générée à partir de l'ERP et du CRM interne :",
+      data: { label: "Performance Trimestrielle", value: "452,300 €", trend: "+12%" },
+      suggestion: "Souhaitez-vous une comparaison avec les objectifs budgétaires annuels ?"
     },
     {
-      question: "Trouve-moi le contrat de maintenance du serveur de Dakar.",
-      answer: "J'ai trouvé 3 documents correspondants dans votre GED locale :",
-      data: { label: "Contrat_Maintenance_DKR_2024.pdf", value: "Signé le 12/01/2024", trend: "Actif" },
-      suggestion: "Souhaitez-vous que je résume les clauses de résiliation ?"
+      question: "Localiser le contrat de maintenance du site de Dakar et ses clauses de résiliation.",
+      answer: "Document identifié dans la GED Juridique :",
+      data: { label: "Contrat_Maintenance_DKR.pdf", value: "Révision : 12/01/2024", trend: "Conforme" },
+      suggestion: "Voulez-vous que je résume les conditions de préavis ?"
     },
     {
-      question: "Quels sont les risques de conformité identifiés dans le dernier audit ?",
-      answer: "Analyse du rapport d'audit interne (Février 2026) :",
-      data: { label: "Risques Critiques", value: "2 Alertes", trend: "Action requise" },
-      suggestion: "Voulez-vous voir le plan d'action recommandé pour ces alertes ?"
+      question: "Quels sont les points de vigilance identifiés lors du dernier audit de conformité ?",
+      answer: "Analyse du rapport d'audit interne confidentiel (Février 2026) :",
+      data: { label: "Points de Vigilance", value: "2 Alertes", trend: "Priorité Haute" },
+      suggestion: "Afficher le plan de remédiation suggéré par le département Risques ?"
     }
   ];
 
@@ -94,49 +94,49 @@ export default function App() {
 
   const features = [
     {
-      icon: <MessageSquare className="w-6 h-6 text-emerald-500" />,
-      title: "Langage Naturel",
-      description: "Posez vos questions comme vous le feriez à un collègue. Plus besoin de requêtes SQL complexes."
+      icon: <MessageSquare className="w-6 h-6 text-indigo-500" />,
+      title: "Intelligence Opérationnelle",
+      description: "Interrogez vos systèmes complexes en langage clair pour une prise de décision accélérée et factuelle."
     },
     {
       icon: <Database className="w-6 h-6 text-blue-500" />,
-      title: "Multi-Sources",
-      description: "Connectez vos bases de données SQL, NoSQL et vos documents PDF, Word ou Excel en un clic."
+      title: "Unification des Données",
+      description: "Connectez vos silos d'information (ERP, CRM, GED) sans migration coûteuse ni risque d'intégrité."
     },
     {
-      icon: <Lock className="w-6 h-6 text-purple-500" />,
-      title: "100% Local & Privé",
-      description: "Vos données ne quittent jamais votre infrastructure. L'IA tourne sur vos serveurs pour une sécurité totale."
+      icon: <Lock className="w-6 h-6 text-violet-500" />,
+      title: "Déploiement Souverain",
+      description: "Installation On-Premise ou Cloud Privé. Vos données sensibles restent sous votre contrôle exclusif."
     },
     {
-      icon: <Zap className="w-6 h-6 text-amber-500" />,
-      title: "Réponses Instantanées",
-      description: "Accédez aux informations clés de votre entreprise en quelques secondes au lieu de plusieurs heures."
+      icon: <ShieldCheck className="w-6 h-6 text-emerald-500" />,
+      title: "Gouvernance & Accès",
+      description: "Respect strict de vos politiques de confidentialité et gestion granulaire des habilitations internes."
     }
   ];
 
   return (
     <div className="min-h-screen bg-slate-50 font-sans text-slate-900 selection:bg-emerald-100 selection:text-emerald-900">
       {/* Navigation */}
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-md shadow-sm py-3' : 'bg-transparent py-5'}`}>
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-md shadow-md py-3' : 'bg-transparent py-5'}`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-center">
           <div className="flex items-center gap-2">
-            <div className="w-10 h-10 bg-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-200">
+            <div className="w-10 h-10 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-xl flex items-center justify-center shadow-lg shadow-blue-200">
               <Cpu className="text-white w-6 h-6" />
             </div>
-            <span className="text-xl font-bold tracking-tight text-slate-900">Teranga<span className="text-blue-600">AI</span></span>
+            <span className="text-xl font-bold tracking-tight text-slate-900">Teranga<span className="text-indigo-600">AI</span></span>
           </div>
 
           {/* Desktop Nav */}
           <div className="hidden md:flex items-center gap-8">
-            <a href="#features" className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Fonctionnalités</a>
-            <a href="#security" className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Sécurité</a>
-            <a href="#how-it-works" className="text-sm font-medium text-slate-600 hover:text-blue-600 transition-colors">Comment ça marche</a>
+            <a href="#features" className="text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">Solutions</a>
+            <a href="#security" className="text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">Sécurité & Gouvernance</a>
+            <a href="#how-it-works" className="text-sm font-semibold text-slate-600 hover:text-indigo-600 transition-colors">Déploiement</a>
             <button 
               onClick={() => setIsModalOpen(true)}
-              className="bg-slate-900 text-white px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-slate-800 transition-all active:scale-95 shadow-lg shadow-slate-200"
+              className="bg-slate-900 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-indigo-900 transition-all active:scale-95 shadow-lg shadow-slate-200"
             >
-              Démo Gratuite
+              Réserver une démo
             </button>
           </div>
 
@@ -175,40 +175,75 @@ export default function App() {
       </AnimatePresence>
 
       {/* Hero Section */}
-      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-full -z-10">
-          <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-100/50 rounded-full blur-3xl opacity-60 animate-pulse"></div>
-          <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-emerald-100/50 rounded-full blur-3xl opacity-60"></div>
+      <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-40 overflow-hidden">
+        {/* Professional Background Elements */}
+        <div className="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden">
+          <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_50%_-20%,#eef2ff,transparent)]"></div>
+          <div className="absolute top-0 left-0 w-full h-full opacity-[0.03]" style={{ backgroundImage: 'radial-gradient(#4f46e5 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }}></div>
+          
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.1, 1],
+              opacity: [0.3, 0.5, 0.3]
+            }}
+            transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
+            className="absolute top-[-10%] left-[-10%] w-[50%] h-[50%] bg-gradient-to-br from-indigo-200/40 to-blue-100/30 rounded-full blur-[120px]"
+          ></motion.div>
+          
+          <motion.div 
+            animate={{ 
+              scale: [1, 1.2, 1],
+              opacity: [0.2, 0.4, 0.2]
+            }}
+            transition={{ duration: 15, repeat: Infinity, ease: "easeInOut", delay: 2 }}
+            className="absolute bottom-[10%] right-[-5%] w-[40%] h-[40%] bg-gradient-to-tr from-blue-200/30 to-emerald-100/20 rounded-full blur-[100px]"
+          ></motion.div>
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <div className="text-center max-w-4xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
             >
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-50 border border-emerald-100 text-emerald-700 text-xs font-bold uppercase tracking-wider mb-6">
-                <ShieldCheck className="w-4 h-4" /> IA Souveraine & Locale
-              </span>
-              <h1 className="text-5xl md:text-7xl font-extrabold text-slate-900 tracking-tight leading-[1.1] mb-8">
-                Interrogez vos données en <span className="text-blue-600">langage naturel</span>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/80 backdrop-blur-md border border-indigo-100 shadow-sm mb-8">
+                <div className="flex -space-x-2">
+                  {[1, 2, 3].map((i) => (
+                    <div key={i} className="w-6 h-6 rounded-full border-2 border-white bg-slate-200 flex items-center justify-center overflow-hidden">
+                      <img src={`https://picsum.photos/seed/user${i}/32/32`} alt="User" className="w-full h-full object-cover" referrerPolicy="no-referrer" />
+                    </div>
+                  ))}
+                </div>
+                <div className="w-px h-4 bg-slate-200 mx-1"></div>
+                <span className="text-indigo-700 text-[11px] font-bold uppercase tracking-widest">
+                  Approuvé par les DSI d'Afrique de l'Ouest
+                </span>
+              </div>
+              
+              <h1 className="text-5xl md:text-8xl font-black text-slate-900 tracking-tight leading-[0.95] mb-10">
+                L'IA Souveraine au service de <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-800">votre Performance</span>
               </h1>
-              <p className="text-xl text-slate-600 leading-relaxed mb-10 max-w-2xl mx-auto">
-                TerangaAI permet aux dirigeants et aux équipes d’accéder instantanément aux informations clés de l'entreprise, en local et en toute sécurité.
+              
+              <p className="text-xl md:text-2xl text-slate-600 leading-relaxed mb-12 max-w-3xl mx-auto font-medium">
+                TerangaAI dote les grandes organisations d'un assistant intelligent interne, déployé sur site, garantissant une confidentialité absolue de vos données stratégiques.
               </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-5">
                 <button 
                   onClick={() => setIsModalOpen(true)}
-                  className="w-full sm:w-auto bg-blue-600 text-white px-8 py-4 rounded-full text-lg font-bold hover:bg-blue-700 transition-all hover:shadow-2xl hover:shadow-blue-200 active:scale-95 flex items-center justify-center gap-2"
+                  className="group w-full sm:w-auto bg-slate-900 text-white px-10 py-5 rounded-2xl text-lg font-bold hover:bg-indigo-950 transition-all hover:shadow-[0_20px_50px_rgba(79,70,229,0.2)] active:scale-95 flex items-center justify-center gap-3"
                 >
-                  Commencer maintenant <ArrowRight className="w-5 h-5" />
+                  Déployer en interne 
+                  <div className="bg-white/10 p-1 rounded-lg group-hover:translate-x-1 transition-transform">
+                    <ArrowRight className="w-5 h-5" />
+                  </div>
                 </button>
                 <button 
                   onClick={() => setIsModalOpen(true)}
-                  className="w-full sm:w-auto bg-white text-slate-700 border border-slate-200 px-8 py-4 rounded-full text-lg font-bold hover:bg-slate-50 transition-all active:scale-95"
+                  className="w-full sm:w-auto bg-white/50 backdrop-blur-md text-slate-700 border border-slate-200 px-10 py-5 rounded-2xl text-lg font-bold hover:bg-white hover:border-indigo-200 transition-all active:scale-95 shadow-sm"
                 >
-                  Voir la démo
+                  Découvrir la solution
                 </button>
               </div>
             </motion.div>
@@ -316,12 +351,13 @@ export default function App() {
       </section>
 
       {/* Features Grid */}
-      <section id="features" className="py-24 bg-white">
+      <section id="features" className="py-24 bg-white relative">
+        <div className="absolute top-0 left-0 w-full h-24 bg-gradient-to-b from-slate-50 to-white"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Pourquoi choisir TerangaAI ?</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Une infrastructure robuste pour la gouvernance des données</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Une solution conçue pour les entreprises qui exigent performance et confidentialité absolue.
+              Conçu pour les secteurs exigeants : Banques, Télécoms et Administrations Publiques.
             </p>
           </div>
 
@@ -359,25 +395,25 @@ export default function App() {
 
       {/* Security Section */}
       <section id="security" className="py-24 bg-slate-900 text-white overflow-hidden relative">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-blue-600/10 blur-[120px] rounded-full"></div>
+        <div className="absolute top-0 right-0 w-1/2 h-full bg-indigo-600/10 blur-[120px] rounded-full"></div>
         
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <span className="text-emerald-400 font-bold tracking-widest uppercase text-xs mb-4 block">Confidentialité Totale</span>
+              <span className="text-indigo-400 font-bold tracking-widest uppercase text-xs mb-4 block">Souveraineté Numérique</span>
               <h2 className="text-4xl md:text-5xl font-bold mb-8 leading-tight">
-                Vos données restent <span className="text-blue-400">chez vous</span>. Point final.
+                Sécurité de Grade Bancaire et <span className="text-indigo-400">Confidentialité Totale</span>.
               </h2>
               <p className="text-slate-400 text-lg mb-10 leading-relaxed">
-                Contrairement aux solutions cloud classiques, TerangaAI s'installe directement sur vos serveurs ou votre cloud privé. Aucune donnée n'est envoyée à l'extérieur pour l'entraînement ou le traitement.
+                Une architecture isolée garantissant qu'aucune information sensible ne quitte votre infrastructure. TerangaAI s'intègre à votre écosystème de sécurité existant sans compromis.
               </p>
               
               <div className="space-y-6">
                 {[
-                  "Hébergement On-Premise ou Cloud Privé",
-                  "Conformité RGPD native",
-                  "Chiffrement de bout en bout",
-                  "Auditabilité complète des logs"
+                  "Déploiement On-Premise ou Cloud Privé",
+                  "Conformité Réglementaire & RGPD",
+                  "Chiffrement AES-256 & TLS 1.3",
+                  "Traçabilité & Auditabilité Totale"
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3">
                     <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center">
@@ -434,12 +470,12 @@ export default function App() {
       </section>
 
       {/* How it works */}
-      <section id="how-it-works" className="py-24 bg-white">
+      <section id="how-it-works" className="py-24 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-20">
-            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Comment ça marche ?</h2>
+            <h2 className="text-3xl md:text-5xl font-bold text-slate-900 mb-6">Une Intégration Transparente & Sécurisée</h2>
             <p className="text-lg text-slate-600 max-w-2xl mx-auto">
-              Trois étapes simples pour transformer votre entreprise en organisation pilotée par l'IA.
+              Déployez une intelligence collective sans perturber vos processus existants.
             </p>
           </div>
 
@@ -452,26 +488,26 @@ export default function App() {
             }}
             className="grid md:grid-cols-3 gap-12 relative"
           >
-            <div className="hidden md:block absolute top-1/2 left-0 w-full h-px bg-slate-100 -z-10"></div>
+            <div className="hidden md:block absolute top-1/2 left-0 w-full h-px bg-slate-200 -z-10"></div>
             
             {[
               {
                 step: "01",
-                title: "Connexion",
-                desc: "Reliez vos sources de données (Postgres, MongoDB, PDF, Excel) via notre interface sécurisée.",
-                icon: <Database className="w-8 h-8" />
+                title: "Interconnexion",
+                desc: "Liaison sécurisée avec vos bases de données et serveurs de fichiers existants (SQL, NoSQL, GED).",
+                icon: <Database className="w-8 h-8 text-indigo-600" />
               },
               {
                 step: "02",
-                title: "Indexation",
-                desc: "Notre IA locale analyse et structure vos informations sans jamais les envoyer sur le cloud.",
-                icon: <Search className="w-8 h-8" />
+                title: "Structuration",
+                desc: "Analyse sémantique locale pour organiser votre connaissance métier de manière sécurisée.",
+                icon: <Search className="w-8 h-8 text-blue-600" />
               },
               {
                 step: "03",
-                title: "Interrogation",
-                desc: "Posez vos questions en français et obtenez des réponses précises basées sur vos propres données.",
-                icon: <MessageSquare className="w-8 h-8" />
+                title: "Exploitation",
+                desc: "Accès sécurisé à l'information pour vos collaborateurs autorisés via une interface intuitive.",
+                icon: <MessageSquare className="w-8 h-8 text-emerald-600" />
               }
             ].map((step, i) => (
               <motion.div 
@@ -497,9 +533,9 @@ export default function App() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24">
+      <section className="py-24 bg-white">
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="bg-blue-600 rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl shadow-blue-200">
+          <div className="bg-gradient-to-br from-indigo-600 via-blue-600 to-indigo-800 rounded-[3rem] p-12 md:p-20 text-center text-white relative overflow-hidden shadow-2xl shadow-indigo-200">
             <div className="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent"></div>
             
             <motion.div
@@ -507,19 +543,22 @@ export default function App() {
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl md:text-6xl font-bold mb-8">Prêt à libérer le potentiel de vos données ?</h2>
-              <p className="text-xl text-blue-100 mb-12 max-w-2xl mx-auto">
-                Rejoignez les dirigeants qui pilotent leur entreprise avec une longueur d'avance grâce à l'IA souveraine.
+              <h2 className="text-4xl md:text-6xl font-bold mb-8">Sécurisez votre Patrimoine Informationnel dès aujourd'hui</h2>
+              <p className="text-xl text-indigo-100 mb-12 max-w-2xl mx-auto">
+                Contactez nos experts pour une étude de déploiement personnalisée dans votre infrastructure.
               </p>
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
                 <button 
                   onClick={() => setIsModalOpen(true)}
-                  className="w-full sm:w-auto bg-white text-blue-600 px-10 py-5 rounded-full text-xl font-bold hover:bg-blue-50 transition-all active:scale-95 shadow-xl"
+                  className="w-full sm:w-auto bg-white text-indigo-600 px-10 py-5 rounded-full text-xl font-bold hover:bg-indigo-50 transition-all active:scale-95 shadow-xl"
                 >
-                  Réserver une démo
+                  Planifier un Audit
                 </button>
-                <button className="w-full sm:w-auto bg-blue-700 text-white border border-blue-500 px-10 py-5 rounded-full text-xl font-bold hover:bg-blue-800 transition-all active:scale-95">
-                  Nous contacter
+                <button 
+                  onClick={() => setIsModalOpen(true)}
+                  className="w-full sm:w-auto bg-indigo-700 text-white border border-indigo-500 px-10 py-5 rounded-full text-xl font-bold hover:bg-indigo-800 transition-all active:scale-95"
+                >
+                  Parler à un expert
                 </button>
               </div>
             </motion.div>
@@ -532,16 +571,16 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-8">
             <div className="flex items-center gap-2">
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+              <div className="w-8 h-8 bg-gradient-to-br from-blue-600 to-indigo-700 rounded-lg flex items-center justify-center">
                 <Cpu className="text-white w-5 h-5" />
               </div>
-              <span className="text-lg font-bold tracking-tight text-slate-900">Teranga<span className="text-blue-600">AI</span></span>
+              <span className="text-lg font-bold tracking-tight text-slate-900">Teranga<span className="text-indigo-600">AI</span></span>
             </div>
             
             <div className="flex gap-8 text-sm font-medium text-slate-500">
-              <a href="#" className="hover:text-blue-600 transition-colors">Mentions Légales</a>
-              <a href="#" className="hover:text-blue-600 transition-colors">Confidentialité</a>
-              <a href="#" className="hover:text-blue-600 transition-colors">Contact</a>
+              <a href="#" className="hover:text-indigo-600 transition-colors">Mentions Légales</a>
+              <a href="#" className="hover:text-indigo-600 transition-colors">Confidentialité</a>
+              <a href="#" className="hover:text-indigo-600 transition-colors">Contact</a>
             </div>
             
             <p className="text-sm text-slate-400">
